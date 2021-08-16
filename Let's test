@@ -1,0 +1,23 @@
+#weird...I don't know how to write a markdown text,this is a java testing code below,it can print a calendar of this month,I copied that from a book lol
+public static void main(String[] args)
+    {
+        LocalDate date = LocalDate.now();//构造一个新的对象，表示构造这个对象的日期
+        int month = date.getMonthValue();//使用对象中的getMonthValue方法获得当月月份
+        int today = date.getDayOfMonth();//使用getDayOfMonth方法获得今天的天数，例如8月12日，则today=12
+        date = date.minusDays(today-1);//传过去参数为11，意思是从今天起减去11天得到一个新对象date：月初第一天
+        DayOfWeek weekday = date.getDayOfWeek();//新建对象变量引用date.getDayOfWeek()类型的对象
+        int value = weekday.getValue();//调用对象的getValue方法得到星期几对应的数值,这里得到的是月初第一天对应的星期
+        System.out.println("Mon Tue Wed Thur Fri Sat Sun");//输出日历头
+        for(int i=1;i<value;i++) System.out.print("\t");//打印缩进，使月初第一天指向对应的星期，注意是<value，也就是说打印了星期几-1个制表符
+        while(date.getMonthValue()==month)
+        {
+            System.out.printf("%3d",date.getDayOfMonth());
+            if(date.getDayOfMonth()==today)
+            {
+                System.out.print("*");
+            }else System.out.print(" ");
+            date=date.plusDays(1);
+            if(date.getDayOfWeek().getValue()==1) System.out.println();
+        }
+
+    }
