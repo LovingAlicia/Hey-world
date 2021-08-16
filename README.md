@@ -2,9 +2,9 @@
 This is a testing repository, just to try Github's fuctions, for being a rookie Github-er
 ## oh
 所以我只能在.md文件下Markdown是吗，fine,我好傻逼，~~md不就是Markdown的缩写吗，不愿再笑……~~
-'''
+```
  这里是不是一个代码块呀
-'''
+```
 # 好，来发点胡言乱语
 ## 关于我是谁
 如果你非要这么问，我只能说：**我是你爹**
